@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ProjectZeus</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <meta name="viewport" content="width=device-width">
+</head>
+<body>
+    <div class="navbar navbar-default text-center" style="background-color:#E3E3E3;border-color:#E3E3E3">
+        <h1>Zeus Name Generator</h1>
+        <small>A Full JS name generator</small>
+    </div>
+    <div class="container">
+        <div class="jumbotron">
+            <form class="form-inline text-center" id="form">
+              <div class="form-group">
+                <label for="fName">First Name:</label>
+                <input id="fNamef" placeholder="John" type="text" class="form-control" name="fName">
+              </div>
+              <div class="form-group">
+                <label for="sName">Second Name:</label>
+                <input id="sNamef" placeholder="Smith" type="text" class="form-control" name="sName">
+              </div>
+              <div class="form-group">
+                <label for="year">Year:</label>
+                <input id="yearf" placeholder="1990" type="text" class="form-control" name="year">
+              </div>
+              <button type="submit" class="btn btn-default">Submit</button>
+          </form>
+          <div class="container">
+              <div class="jumbotron">
+                  <p class="heading">Name: <span id="fName"></span></p>
+                  <hr />
+                  <p>Second name: <span id="sName"></span></p>
+                  <hr />
+                  <p>Year: <span id="year"></span></p>
+                  <hr />
+                  <p>Result: <span id="result"></span></p>
+              </div>
+          </div>
+    <script>
+    // Coded by HarryUK - Please Enjoy
+    function submit(event) {
+        event.preventDefault();
+        var fName = document.forms.form.fNamef.value;
+        var sName = document.forms.form.sNamef.value;
+        var year = document.forms.form.yearf.value;
+
+        document.getElementById("fName").innerHTML = (fName);
+        document.getElementById("sName").innerHTML = (sName);
+        document.getElementById("year").innerHTML = (year);
+        fName = fName.substr(0, 2);
+        document.getElementById("result").innerHTML = (fName + sName + year);
+    }
+    document.forms.form.onsubmit = submit;
+    document.forms.form.fNamef.onkeyup = submit;
+    document.forms.form.sNamef.onkeyup = submit;
+    document.forms.form.yearf.onkeyup = submit;
+    </script>
+</body>
+</html>
